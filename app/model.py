@@ -20,3 +20,28 @@ class Carreras:
         sql = "SELECT * FROM carreras"
         cursor.execute(sql)
         return cursor.fetchall()
+    
+    def actualizar_carrera(self, nombre=None, duracion=None, descripcion=None):
+        cursor = mydb.cursor()
+        updates = []
+        values = []
+        if nombre:
+            updates.append("nombre = %s")
+            values.append(nombre)
+        if duracion:
+            updates.append("duracion = %s")
+            values.append(duracion)
+        if descripcion:
+            updates.append("descripcion = %s")
+            values.append(descripcion)
+        values.append(self.__id)
+        sql = f"UPDATE carreras SET {', '.join(updates)} WHERE id = %s"
+        cursor.execute(sql, values)
+        mydb.commit()
+        
+    def eliminar_carrera(self):
+        cursor = mydb.cursor()
+        sql = "DELETE FROM carreras WHERE id = %s"
+        values = (self.__id,)
+        cursor.execute(sql, values)
+        mydb.commit()

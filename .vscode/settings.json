@@ -1,13 +1,21 @@
 {
     "cSpell.words": [
+        "actualizar",
+        "agregar",
         "archivo",
         "Cargar",
+        "carrera",
         "conectar",
         "Conexión",
         "datos",
+        "descripcion",
         "dotenv",
+        "duracion",
+        "eliminar",
         "exitosa",
-        "mydb"
+        "lastrowid",
+        "mydb",
+        "nombre"
     ],
     "postman.settings.dotenv-detection-notification-visibility": false
 }
