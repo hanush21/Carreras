@@ -1,5 +1,13 @@
 {
     "cSpell.words": [
+        "archivo",
+        "Cargar",
+        "conectar",
+        "Conexión",
+        "datos",
+        "dotenv",
+        "exitosa",
         "mydb"
-    ]
+    ],
+    "postman.settings.dotenv-detection-notification-visibility": false
 }
