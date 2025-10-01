@@ -1,6 +1,28 @@
 from app.model import Carreras
 
-nuevaCarrera = Carreras("Ingenieria en Sistemas", 5, "Carrera orientada al desarrollo de software.")
-print("Carrera agregada con éxito.")
+def print_menu():
+    print("\nSeleccione una opción:")
+    print("1. Agregar nueva carrera")
+    print("2. Ver todas las carreras")
+    print("0. Salir")
 
-print(Carreras.ver_carreras())
+opcion = -1
+
+while(opcion != 0):
+    print_menu()
+    opcion = int(input("Ingrese una opción: "))
+    
+    if opcion == 1:
+        nombre = input("Ingrese el nombre de la carrera: ")
+        duracion = int(input("Ingrese la duración de la carrera (en años): "))
+        descripcion = input("Ingrese una descripción de la carrera: ")
+        nueva_carrera = Carreras(nombre, duracion, descripcion)
+        print("Carrera agregada con éxito.")
+    elif opcion == 2:
+        carreras = Carreras.ver_carreras()
+        for carrera in carreras:
+            print(f"ID: {carrera[0]}, Nombre: {carrera[1]}, Duración: {carrera[2]} años, Descripción: {carrera[3]}")
+    elif opcion == 0:
+        print("Programa finalizado.")
+    else:
+        print("Opción no válida. Intente nuevamente.")
