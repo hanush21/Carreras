@@ -35,13 +35,13 @@ class Carreras:
 
     def actualizar_carrera(self, carrera: Carrera):
         cursor = self.db.cursor()
-        sql = "UPDATE carreras SET nombre = %s, duracion = %s, descripcion = %s WHERE id = %s"
+        sql = "UPDATE carreras SET nombre = %s, duracion = %s, descripcion = %s WHERE idcarreras = %s"
         values = (carrera.nombre, carrera.duracion, carrera.descripcion, carrera.id)
         cursor.execute(sql, values)
         self.db.commit()
 
     def eliminar_carrera(self, id_carrera: int):
         cursor = self.db.cursor()
-        sql = "DELETE FROM carreras WHERE id = %s"
+        sql = "DELETE FROM carreras WHERE idcarreras = %s"
         cursor.execute(sql, (id_carrera,))
         self.db.commit()
