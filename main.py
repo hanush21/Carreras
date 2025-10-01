@@ -6,23 +6,23 @@ def print_menu():
     print("2. Ver todas las carreras")
     print("0. Salir")
 
-opcion = -1
+opcion = "-1"
 
-while(opcion != 0):
+while(opcion != "0"):
     print_menu()
-    opcion = int(input("Ingrese una opción: "))
+    opcion = input("Ingrese una opción: ")
     
-    if opcion == 1:
+    if opcion == "1":
         nombre = input("Ingrese el nombre de la carrera: ")
         duracion = int(input("Ingrese la duración de la carrera (en años): "))
         descripcion = input("Ingrese una descripción de la carrera: ")
         nueva_carrera = Carreras(nombre, duracion, descripcion)
         print("Carrera agregada con éxito.")
-    elif opcion == 2:
+    elif opcion == "2":
         carreras = Carreras.ver_carreras()
         for carrera in carreras:
             print(f"ID: {carrera[0]}, Nombre: {carrera[1]}, Duración: {carrera[2]} años, Descripción: {carrera[3]}")
-    elif opcion == 0:
+    elif opcion == "0":
         print("Programa finalizado.")
     else:
         print("Opción no válida. Intente nuevamente.")
